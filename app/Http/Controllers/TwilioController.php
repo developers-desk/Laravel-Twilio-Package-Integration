@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use LaravelTwilio\Facades\Twilio;
+use DevelopersDesk\LaravelTwilio\Facades\Twilio;
 
 class TwilioController extends Controller
 {
@@ -16,7 +16,28 @@ class TwilioController extends Controller
         $to = $request->input('to');
         $message = $request->input('message');
 
-        $result = Twilio::sendMessage($to, $message);
+        $result = Twilio::sms($to, $message);
+
+        return $result;
+    }
+
+    public function sendWhatsapp(Request $request)
+    {
+        if (! Twilio::isEnabled()) {
+            return;
+        }
+
+        $to = $request->input('to');
+        $contentSid = $request->input('message');
+
+        $result = Twilio::whatsapp(
+            $to,
+            $contentSid,
+            [
+                "2" => "17-January-2026",
+                "3" => "9AM",
+            ]
+        );        
 
         return $result;
     }

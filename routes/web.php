@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 
 Route::post('sendMessage', [TwilioController::class, 'sendMessage']);
+Route::post('sendWhatsapp', [TwilioController::class, 'sendWhatsapp']);

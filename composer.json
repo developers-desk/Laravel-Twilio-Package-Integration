@@ -8,18 +8,12 @@
         "framework"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/sonichandni/laravel-twilio"
-        }
-    ],
     "require": {
         "php": "^8.2",
+        "developers-desk/laravel-twilio": "^1.2",
         "laravel/framework": "^12.0",
         "laravel/telescope": "^5.16",
-        "laravel/tinker": "^2.10.1",
-        "sonichandni/laravel-twilio": "^1.0"
+        "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
